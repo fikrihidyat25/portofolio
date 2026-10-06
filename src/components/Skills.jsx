@@ -28,10 +28,10 @@ const skillGroups = [
   {
     icon: Wrench,
     title: 'Workflow & Alat Kerja',
-    desc: 'Alur kerja efisien mulai dari tahap prototyping awal hingga pengujian kualitas perangkat lunak.',
+    desc: 'Alur kerja mulai dari perancangan antarmuka, version control, hingga pengujian fungsionalitas software.',
     items: [
-      { name: 'Rapid Prototyping', note: 'Iterasi Cepat Konsep Produk' },
-      { name: 'AI Tools for UI/UX Framing', note: 'Eksplorasi Struktur & Wireframing' },
+      { name: 'Wireframing & Prototyping', note: 'Perancangan Konsep & Alur UI' },
+      { name: 'Figma & UI Tools', note: 'Eksplorasi Struktur & Desain Layar' },
       { name: 'Black-box Testing', note: 'Validasi Fungsionalitas Software' },
       { name: 'Git & GitHub', note: 'Version Control & Kolaborasi Kode' },
     ],
@@ -39,10 +39,10 @@ const skillGroups = [
   {
     icon: Users,
     title: 'Kolaborasi & Nilai Tim',
-    desc: 'Sikap profesional dalam tim lintas disiplin untuk menghasilkan produk yang berpusat pada pengguna.',
+    desc: 'Kerja sama yang solid dan komunikasi yang baik untuk menyelesaikan proyek secara efektif.',
     items: [
-      { name: 'Komunikasi Empatik', note: 'Penyampaian Ide yang Jelas & Terbuka' },
-      { name: 'Kerja Tim Lintas Fungsi', note: 'Sinergi Desain, Kode & Operasional' },
+      { name: 'Komunikasi Terbuka', note: 'Penyampaian Ide yang Jelas & Terarah' },
+      { name: 'Kerja Sama Tim', note: 'Koordinasi & Eksekusi Tugas Bersama' },
       { name: 'Terbuka terhadap Evaluasi', note: 'Menerima & Menerapkan Feedback' },
       { name: 'Adaptasi Cepat', note: 'Kemampuan Mempelajari Teknologi Baru' },
     ],

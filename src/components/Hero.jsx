@@ -45,7 +45,7 @@ export default function Hero() {
             </div>
 
             <p className="text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed max-w-2xl">
-              Mahasiswa Teknik Informatika dengan fondasi kuat pada pengembangan web full-stack, aplikasi mobile, serta infrastruktur jaringan. Berpengalaman dalam rapid prototyping, integrasi API, dan arsitektur sistem modern. Berorientasi kolaboratif dan berkomitmen untuk menghasilkan produk digital yang berpusat pada kenyamanan pengguna.
+              Mahasiswa Teknik Informatika dengan fokus pada pengembangan web full-stack, aplikasi mobile, serta jaringan komputer. Terbiasa membangun antarmuka web, integrasi API, dan perancangan database yang fungsional serta mudah digunakan.
             </p>
 
             {/* Action Buttons with min 44px tap targets */}

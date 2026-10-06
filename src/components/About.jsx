@@ -79,20 +79,20 @@ export default function About() {
                 <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50">
                   <h4 className="text-sm font-bold text-zinc-900 flex items-center gap-2">
                     <BookOpen className="w-4 h-4 text-brand" />
-                    <span>Arsitektur Sistem & Rapid Prototyping</span>
+                    <span>Perancangan Sistem & UI/UX</span>
                   </h4>
                   <p className="mt-1 text-sm text-zinc-600">
-                    Memetakan logika backend dan rancangan database sebelum mengimplementasikan antarmuka responsif secara cepat dan terukur.
+                    Merancang alur database dan logika backend terlebih dahulu, lalu menerjemahkannya ke dalam antarmuka web yang rapi dan mudah digunakan.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl border border-zinc-100 bg-zinc-50">
                   <h4 className="text-sm font-bold text-zinc-900 flex items-center gap-2">
                     <HeartHandshake className="w-4 h-4 text-brand" />
-                    <span>Komunikasi Empatik & Kolaborasi Tim</span>
+                    <span>Komunikasi & Kolaborasi Tim</span>
                   </h4>
                   <p className="mt-1 text-sm text-zinc-600">
-                    Terbuka terhadap masukan, adaptif terhadap arahan tim senior, dan mengutamakan keselarasan antar-disiplin (desain, backend, dan operasional).
+                    Terbuka terhadap masukan, adaptif terhadap arahan tim, dan mengutamakan koordinasi yang jelas dalam menyelesaikan pekerjaan.
                   </p>
                 </div>
               </div>
