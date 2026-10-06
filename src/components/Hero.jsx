@@ -11,10 +11,9 @@ export default function Hero() {
       <div className="container-max w-full py-4 sm:py-6 lg:py-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Main Introduction Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
             className="lg:col-span-7 flex flex-col justify-center"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-zinc-950 tracking-tight leading-[1.15]">
@@ -26,10 +25,9 @@ export default function Hero() {
             </p>
 
             {/* Mobile & Tablet Responsive Photo: Visible directly in the hero flow on mobile (< lg) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
               className="block lg:hidden my-6"
             >
               <div className="w-full max-w-md mx-auto aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-soft border border-zinc-200 bg-zinc-100 relative">
@@ -44,7 +42,7 @@ export default function Hero() {
                   <span className="text-zinc-300 text-[11px]">Siap Kerja & Terus Belajar</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             <p className="text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed max-w-2xl">
               Mahasiswa Teknik Informatika dengan fondasi kuat pada pengembangan web full-stack, aplikasi mobile, serta infrastruktur jaringan. Berpengalaman dalam rapid prototyping, integrasi API, dan arsitektur sistem modern. Berorientasi kolaboratif dan berkomitmen untuk menghasilkan produk digital yang berpusat pada kenyamanan pengguna.
@@ -110,13 +108,12 @@ export default function Hero() {
                 <span>LinkedIn Profil</span>
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Desktop Photo Column: Fills the full height of the desktop browser window */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+          <div
+            data-aos="fade-left"
+            data-aos-duration="700"
             className="hidden lg:flex lg:col-span-5 justify-center items-center h-full"
           >
             <div className="w-full h-full min-h-[520px] xl:min-h-[600px] max-h-[680px] rounded-3xl border border-zinc-200/90 bg-white p-3 shadow-soft flex flex-col justify-between">
@@ -125,4 +122,22 @@ export default function Hero() {
                   src="/profile.jpeg"
                   alt="Foto resmi Fikri Hidayat"
                   className="w-full h-full object-cover object-center"
-         
+                  loading="eager"
+                />
+              </div>
+
+              <div className="mt-3.5 p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 shrink-0 text-left">
+                <p className="text-sm font-bold text-zinc-950">
+                  Siap Bekerja & Berkomitmen Belajar Lebih Jauh
+                </p>
+                <p className="mt-1 text-xs text-zinc-600 leading-relaxed">
+                  Memiliki rasa ingin tahu tinggi dan kemauan kuat untuk terus berkembang. Berbekal pengalaman magang, proyek web, dan infrastruktur jaringan, saya siap terjun ke lingkungan kerja profesional, beradaptasi dengan ritme tim, dan terbuka menerima bimbingan untuk mengasah keahlian teknis secara mendalam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

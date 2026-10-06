@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -11,6 +13,14 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60,
+    })
+  }, [])
   return (
     <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 selection:bg-brand/20 selection:text-zinc-900">
       <Navbar />

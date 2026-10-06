@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, ExternalLink } from 'lucide-react'
 
 export default function Contact() {
@@ -39,7 +40,11 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white">
+    <section
+      id="contact"
+      className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white"
+      data-aos="fade-up"
+    >
       <div className="container-max">
         <div className="max-w-3xl">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
@@ -52,7 +57,11 @@ export default function Contact() {
 
         <div className="mt-12 grid lg:grid-cols-12 gap-10 items-start">
           {/* Contact Details Cards */}
-          <div className="lg:col-span-5 space-y-4">
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="lg:col-span-5 space-y-4"
+          >
             <div className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-card">
               <h3 className="font-bold text-base text-zinc-950 mb-4">
                 Informasi Kontak Langsung
@@ -142,7 +151,11 @@ export default function Contact() {
           </div>
 
           {/* Contact Message Form */}
-          <div className="lg:col-span-7">
+          <div
+            data-aos="fade-left"
+            data-aos-delay="200"
+            className="lg:col-span-7"
+          >
             <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-card">
               <h3 className="font-bold text-lg text-zinc-950 mb-1">
                 Kirim Pesan Langsung

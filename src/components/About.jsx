@@ -4,13 +4,10 @@ import { GraduationCap, BookOpen, HeartHandshake, Compass } from 'lucide-react'
 
 export default function About() {
   return (
-    <motion.section
+    <section
       id="about"
       className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5 }}
+      data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
@@ -25,7 +22,11 @@ export default function About() {
         {/* Education & Core Values */}
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           {/* Education Box */}
-          <div className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 sm:p-8">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 sm:p-8"
+          >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center">
                 <GraduationCap className="w-5 h-5" />
@@ -61,7 +62,11 @@ export default function About() {
           </div>
 
           {/* Pillars Box */}
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 flex flex-col justify-between">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 flex flex-col justify-between"
+          >
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-zinc-100 text-zinc-800 flex items-center justify-center">
@@ -95,4 +100,12 @@ export default function About() {
 
             <div className="mt-6 pt-5 border-t border-zinc-100">
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Bertekad untuk terus memperdalam rekayasa perangk
+                Bertekad untuk terus memperdalam rekayasa perangkat lunak, siap berkontribusi langsung dalam tim kerja profesional, serta terbuka mengeksplorasi ekosistem teknologi modern.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -77,13 +77,10 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <motion.section
+    <section
       id="projects"
       className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5 }}
+      data-aos="fade-up"
     >
       <div className="container-max">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -109,9 +106,11 @@ export default function Projects() {
         </div>
 
         <div className="mt-12 grid sm:grid-cols-2 gap-6 lg:gap-8">
-          {projectsData.map((project) => (
+          {projectsData.map((project, idx) => (
             <article
               key={project.id}
+              data-aos="fade-up"
+              data-aos-delay={idx * 80}
               className="rounded-2xl border border-zinc-200 bg-zinc-50/40 hover:bg-white p-6 sm:p-7 shadow-card hover:border-zinc-300 transition-all flex flex-col justify-between"
             >
               <div>
@@ -255,4 +254,15 @@ export default function Projects() {
                   target="_blank"
                   rel="noreferrer"
                   className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium transition"
-           
+                >
+                  <span>Buka GitHub</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}

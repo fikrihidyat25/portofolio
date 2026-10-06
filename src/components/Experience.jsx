@@ -63,13 +63,10 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <motion.section
+    <section
       id="experience"
       className="py-16 sm:py-24 border-t border-zinc-200/80 bg-zinc-50/50"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5 }}
+      data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
@@ -85,6 +82,8 @@ export default function Experience() {
           {experiences.map((exp, idx) => (
             <div
               key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 80}
               className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-card hover:border-zinc-300 transition-colors"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-100 pb-4">
@@ -126,4 +125,16 @@ export default function Experience() {
                 {exp.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-xs font-medium px-2.5 py-1 rounded-lg bg-zinc-50 text-z
+                    className="text-xs font-medium px-2.5 py-1 rounded-lg bg-zinc-50 text-zinc-700 border border-zinc-200/70"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

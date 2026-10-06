@@ -62,13 +62,10 @@ const certificatesList = [
 
 export default function Certificates() {
   return (
-    <motion.section
+    <section
       id="certificates"
       className="py-16 sm:py-24 border-t border-zinc-200/80 bg-zinc-50/50"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5 }}
+      data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
@@ -84,6 +81,8 @@ export default function Certificates() {
           {certificatesList.map((item, index) => (
             <div
               key={index}
+              data-aos="fade-up"
+              data-aos-delay={index * 70}
               className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-card hover:border-zinc-300 transition-colors flex flex-col justify-between"
             >
               <div>
@@ -131,7 +130,11 @@ export default function Certificates() {
         </div>
 
         {/* Note / Verification prompt */}
-        <div className="mt-8 p-4 rounded-xl border border-zinc-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm text-zinc-600">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          className="mt-8 p-4 rounded-xl border border-zinc-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm text-zinc-600"
+        >
           <div className="flex items-center gap-2">
             <FileCheck className="w-4 h-4 text-brand shrink-0" />
             <span>
@@ -140,4 +143,12 @@ export default function Certificates() {
           </div>
           <a
             href="#contact"
-            className="min-h-[44px] inline-flex
+            className="min-h-[44px] inline-flex items-center font-bold text-brand hover:underline py-1 px-1 focus-visible:ring-2 focus-visible:ring-brand rounded"
+          >
+            Minta Verifikasi Berkas
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}

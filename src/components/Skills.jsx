@@ -51,13 +51,10 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <motion.section
+    <section
       id="skills"
       className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5 }}
+      data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
@@ -75,6 +72,8 @@ export default function Skills() {
             return (
               <div
                 key={idx}
+                data-aos="fade-up"
+                data-aos-delay={idx * 80}
                 className="rounded-2xl border border-zinc-200 bg-zinc-50/40 p-6 sm:p-7 shadow-card flex flex-col justify-between"
               >
                 <div>
@@ -97,4 +96,16 @@ export default function Skills() {
                         <p className="font-bold text-xs sm:text-sm text-zinc-900">
                           {item.name}
                         </p>
-                        <p className="text-xs text-zinc
+                        <p className="text-xs text-zinc-500 mt-0.5">{item.note}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}

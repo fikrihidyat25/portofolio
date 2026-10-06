@@ -1,11 +1,20 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { FileText, Download, Mail, Phone, ExternalLink } from 'lucide-react'
 
 export default function ResumeCTA() {
   return (
-    <section id="resume" className="py-16 sm:py-20 border-t border-zinc-200/80 bg-zinc-50/50">
+    <section
+      id="resume"
+      className="py-16 sm:py-20 border-t border-zinc-200/80 bg-zinc-50/50"
+      data-aos="fade-up"
+    >
       <div className="container-max">
-        <div className="rounded-3xl border border-zinc-200 bg-white p-8 sm:p-12 shadow-card">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          className="rounded-3xl border border-zinc-200 bg-white p-8 sm:p-12 shadow-card"
+        >
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-950 tracking-tight">
