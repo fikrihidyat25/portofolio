@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
   :focus-visible {
     outline: 2px solid #0f766e;
@@ -15,6 +19,14 @@
 @layer utilities {
   .container-max {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

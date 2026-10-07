@@ -6,36 +6,36 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-white"
       data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 tracking-tight">
             Latar Belakang & Pendidikan
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed">
             Saya menempuh studi Sarjana Teknik Informatika di Institut Teknologi Padang (ITP). Menggabungkan pengalaman praktis jaringan dari SMK dengan arsitektur rekayasa perangkat lunak modern untuk menciptakan produk web dan mobile yang tangguh, aman, dan mudah digunakan.
           </p>
         </div>
 
         {/* Education & Core Values */}
-        <div className="mt-12 grid md:grid-cols-2 gap-8">
+        <div className="mt-8 sm:mt-12 grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* Education Box */}
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 sm:p-8"
+            className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-5 sm:p-7 lg:p-8"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
                 <GraduationCap className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-zinc-900">Riwayat Pendidikan</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-zinc-900">Riwayat Pendidikan</h3>
             </div>
 
             <div className="space-y-6">
-              <div className="relative pl-6 border-l-2 border-brand">
+              <div className="relative pl-5 sm:pl-6 border-l-2 border-brand">
                 <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-brand" />
                 <span className="text-xs font-semibold text-brand">2022 - Perkiraan Lulus November 2026</span>
                 <h4 className="text-base font-bold text-zinc-900 mt-0.5">
@@ -47,7 +47,7 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="relative pl-6 border-l-2 border-zinc-200">
+              <div className="relative pl-5 sm:pl-6 border-l-2 border-zinc-200">
                 <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-zinc-400" />
                 <span className="text-xs font-semibold text-zinc-500">2019 - 2022</span>
                 <h4 className="text-base font-bold text-zinc-900 mt-0.5">
@@ -65,7 +65,7 @@ export default function About() {
           <div
             data-aos="fade-up"
             data-aos-delay="200"
-            className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 flex flex-col justify-between"
+            className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-7 lg:p-8 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-3 mb-6">

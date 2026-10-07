@@ -92,7 +92,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden border-t border-zinc-200 bg-white"
+            className="lg:hidden border-t border-zinc-200 bg-white max-h-[calc(100dvh-4rem)] sm:max-h-[calc(100dvh-5rem)] overflow-y-auto shadow-lg"
           >
             <div className="container-max py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -100,7 +100,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="min-h-[44px] flex items-center px-3 py-2 text-base font-semibold text-zinc-800 hover:bg-zinc-50 rounded-lg transition"
+                  className="min-h-[44px] flex items-center px-3.5 py-2.5 text-base font-semibold text-zinc-800 hover:bg-zinc-100/70 rounded-xl transition focus-visible:ring-2 focus-visible:ring-brand"
                 >
                   {link.label}
                 </a>
@@ -109,7 +109,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="min-h-[44px] flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-brand text-white font-medium text-sm transition"
+                  className="min-h-[44px] flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-zinc-900 text-white font-medium text-sm hover:bg-zinc-800 transition shadow-sm"
                 >
                   Hubungi Saya
                 </a>

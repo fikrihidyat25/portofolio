@@ -98,21 +98,21 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-16 sm:py-24 border-t border-zinc-200/80 bg-zinc-50/50"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-zinc-50/50"
       data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 tracking-tight">
             Pengalaman Kerja, Pelatihan & Organisasi
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed">
             Rekam jejak terstruktur mencakup pengalaman kerja teknis, pelatihan kejuruan resmi, serta keaktifan kepanitiaan dan organisasi kampus.
           </p>
         </div>
 
-        {/* Filter Categories */}
-        <div className="mt-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        {/* Filter Categories with min 44px tap targets */}
+        <div className="mt-6 sm:mt-8 flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none touch-pan-x">
           {categories.map((cat) => {
             const count = getCategoryCount(cat)
             return (
@@ -120,7 +120,7 @@ export default function Experience() {
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`min-h-[40px] px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border flex items-center gap-2 ${
+                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-brand ${
                   activeCategory === cat
                     ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
                     : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
@@ -128,7 +128,7 @@ export default function Experience() {
               >
                 <span>{cat}</span>
                 <span
-                  className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
+                  className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
                     activeCategory === cat
                       ? 'bg-zinc-700 text-zinc-100'
                       : 'bg-zinc-100 text-zinc-600'
@@ -152,7 +152,7 @@ export default function Experience() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.2 }}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-card hover:border-zinc-300 transition-colors"
+                className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-7 lg:p-8 shadow-card hover:border-zinc-300 transition-colors"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-100 pb-4">
                   <div>

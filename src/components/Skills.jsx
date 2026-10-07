@@ -53,20 +53,20 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-white"
       data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 tracking-tight">
             Kompetensi Teknis & Soft Skills
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed">
             Dikelompokkan sesuai pengalaman akademik di ITP, SMK TKJ, magang Kominfo, dan proyek riil tanpa angka statistik buatan.
           </p>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-8 sm:mt-12 grid md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {skillGroups.map((group, idx) => {
             const Icon = group.icon
             return (
@@ -74,20 +74,20 @@ export default function Skills() {
                 key={idx}
                 data-aos="fade-up"
                 data-aos-delay={idx * 80}
-                className="rounded-2xl border border-zinc-200 bg-zinc-50/40 p-6 sm:p-7 shadow-card flex flex-col justify-between"
+                className="rounded-2xl border border-zinc-200 bg-zinc-50/40 p-5 sm:p-7 shadow-card flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="font-bold text-lg text-zinc-950">{group.title}</h3>
+                    <h3 className="font-bold text-base sm:text-lg text-zinc-950">{group.title}</h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-zinc-600 mb-6 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 mb-5 sm:mb-6 leading-relaxed">
                     {group.desc}
                   </p>
 
-                  <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                     {group.items.map((item, itemIdx) => (
                       <div
                         key={itemIdx}
@@ -109,3 +109,4 @@ export default function Skills() {
     </section>
   )
 }
+

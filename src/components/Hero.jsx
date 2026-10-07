@@ -6,9 +6,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="w-full min-h-[calc(100dvh-4rem)] sm:min-h-[calc(100dvh-5rem)] flex items-center py-6 sm:py-10 lg:py-0 border-b border-zinc-200/60 bg-white"
+      className="w-full flex items-center py-8 sm:py-12 lg:py-16 xl:min-h-[calc(100dvh-5rem)] border-b border-zinc-200/60 bg-white"
     >
-      <div className="container-max w-full py-4 sm:py-6 lg:py-8">
+      <div className="container-max w-full">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Main Introduction Column */}
           <div
@@ -16,11 +16,11 @@ export default function Hero() {
             data-aos-duration="700"
             className="lg:col-span-7 flex flex-col justify-center"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-zinc-950 tracking-tight leading-[1.15]">
+            <h1 className="text-[1.85rem] leading-[1.2] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-zinc-950 tracking-tight">
               Halo, saya <span className="text-brand">Fikri Hidayat</span>
             </h1>
 
-            <p className="mt-2.5 sm:mt-3 text-base sm:text-lg md:text-xl font-semibold text-zinc-700">
+            <p className="mt-2.5 sm:mt-3 text-base sm:text-lg md:text-xl font-semibold text-zinc-700 leading-snug">
               Mobile & Web Developer | Mahasiswa Teknik Informatika ITP
             </p>
 
@@ -48,13 +48,13 @@ export default function Hero() {
               Mahasiswa Teknik Informatika dengan fokus pada pengembangan web full-stack, aplikasi mobile, serta jaringan komputer. Terbiasa membangun antarmuka web, integrasi API, dan perancangan database yang fungsional serta mudah digunakan.
             </p>
 
-            {/* Action Buttons with min 44px tap targets */}
-            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+            {/* Action Buttons with min 44px tap targets: Stacks on mobile, inline on tablet+ */}
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <motion.a
                 href="#projects"
                 whileTap={{ scale: 0.97 }}
                 whileHover={{ y: -2 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-zinc-900 text-white font-medium text-sm sm:text-base hover:bg-zinc-800 transition shadow-sm focus-visible:ring-2 focus-visible:ring-zinc-900"
+                className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-zinc-900 text-white font-medium text-sm sm:text-base hover:bg-zinc-800 transition shadow-sm focus-visible:ring-2 focus-visible:ring-zinc-900"
               >
                 <span>Lihat Portofolio</span>
                 <ArrowRight className="w-4 h-4" />
@@ -64,7 +64,7 @@ export default function Hero() {
                 href="#resume"
                 whileTap={{ scale: 0.97 }}
                 whileHover={{ y: -2 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border border-zinc-300 bg-white text-zinc-800 font-medium text-sm sm:text-base hover:bg-zinc-50 transition shadow-sm focus-visible:ring-2 focus-visible:ring-brand"
+                className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border border-zinc-300 bg-white text-zinc-800 font-medium text-sm sm:text-base hover:bg-zinc-50 transition shadow-sm focus-visible:ring-2 focus-visible:ring-brand"
               >
                 <Download className="w-4 h-4 text-zinc-500" />
                 <span>Ringkasan CV</span>
@@ -76,15 +76,15 @@ export default function Hero() {
                 rel="noreferrer"
                 whileTap={{ scale: 0.97 }}
                 whileHover={{ y: -2 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border border-zinc-200 text-zinc-700 font-medium text-sm sm:text-base hover:bg-zinc-100 transition focus-visible:ring-2 focus-visible:ring-brand"
+                className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border border-zinc-200 text-zinc-700 font-medium text-sm sm:text-base hover:bg-zinc-100 transition focus-visible:ring-2 focus-visible:ring-brand"
               >
                 <Phone className="w-4 h-4 text-brand" />
                 <span>WhatsApp</span>
               </motion.a>
             </div>
 
-            {/* Quick Contact & Verified Profile Links */}
-            <div className="mt-8 pt-5 border-t border-zinc-200 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-zinc-600">
+            {/* Quick Contact & Verified Profile Links: Responsive wrapping */}
+            <div className="mt-8 pt-5 border-t border-zinc-200 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 sm:gap-6 text-xs sm:text-sm text-zinc-600">
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-zinc-500 shrink-0" />
                 <span>Padang, Sumatera Barat</span>
@@ -93,7 +93,7 @@ export default function Hero() {
                 href="https://github.com/fikrihidyat25"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 hover:text-zinc-950 transition py-1 focus-visible:ring-2 focus-visible:ring-brand rounded"
+                className="flex items-center gap-1.5 hover:text-zinc-950 transition py-1 focus-visible:ring-2 focus-visible:ring-brand rounded break-all"
               >
                 <Github className="w-4 h-4 text-zinc-700 shrink-0" />
                 <span>github.com/fikrihidyat25</span>

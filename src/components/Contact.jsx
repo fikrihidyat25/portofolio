@@ -42,32 +42,32 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-24 border-t border-zinc-200/80 bg-white"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-white"
       data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 tracking-tight">
             Kontak & Kolaborasi
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed">
             Terbuka untuk diskusi proyek rekayasa perangkat lunak, peluang magang, kolaborasi tim, maupun kesempatan program Apple Developer Academy.
           </p>
         </div>
 
-        <div className="mt-12 grid lg:grid-cols-12 gap-10 items-start">
+        <div className="mt-8 sm:mt-12 grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Contact Details Cards */}
           <div
             data-aos="fade-right"
             data-aos-delay="100"
             className="lg:col-span-5 space-y-4"
           >
-            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-6 shadow-card">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50/50 p-5 sm:p-7 shadow-card">
               <h3 className="font-bold text-base text-zinc-950 mb-4">
                 Informasi Kontak Langsung
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 <a
                   href="mailto:fikrihidayat2712@gmail.com"
                   className="min-h-[44px] flex items-center gap-3 p-3 rounded-xl bg-white border border-zinc-200 hover:border-brand transition group"
@@ -75,9 +75,9 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-lg bg-brand/10 text-brand flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs text-zinc-500 font-medium">Email Utama</p>
-                    <p className="text-sm font-bold text-zinc-900 group-hover:text-brand transition-colors">
+                    <p className="text-sm font-bold text-zinc-900 group-hover:text-brand transition-colors break-all">
                       fikrihidayat2712@gmail.com
                     </p>
                   </div>
@@ -92,7 +92,7 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs text-zinc-500 font-medium">WhatsApp / Telepon</p>
                     <p className="text-sm font-bold text-zinc-900 group-hover:text-brand transition-colors">
                       +62 823-8733-7572
@@ -104,7 +104,7 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-lg bg-zinc-100 text-zinc-600 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs text-zinc-500 font-medium">Lokasi Domisili</p>
                     <p className="text-sm font-bold text-zinc-900">
                       Padang, Sumatera Barat, Indonesia
@@ -114,7 +114,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-6 pt-5 border-t border-zinc-200/80">
-                <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">
+                <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2.5">
                   Profil Media Sosial
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs">
@@ -122,7 +122,7 @@ export default function Contact() {
                     href="https://linkedin.com/in/fikri-hidayat-092070368/"
                     target="_blank"
                     rel="noreferrer"
-                    className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-semibold transition"
+                    className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-semibold transition focus-visible:ring-2 focus-visible:ring-brand"
                   >
                     <span>LinkedIn</span>
                     <ExternalLink className="w-3 h-3 text-zinc-400" />
@@ -131,7 +131,7 @@ export default function Contact() {
                     href="https://github.com/fikrihidyat25"
                     target="_blank"
                     rel="noreferrer"
-                    className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-semibold transition"
+                    className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-semibold transition focus-visible:ring-2 focus-visible:ring-brand"
                   >
                     <span>GitHub</span>
                     <ExternalLink className="w-3 h-3 text-zinc-400" />
@@ -140,9 +140,9 @@ export default function Contact() {
                     href="https://www.instagram.com/nickfikri0"
                     target="_blank"
                     rel="noreferrer"
-                    className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-semibold transition"
+                    className="min-h-[44px] inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-50 text-zinc-700 font-semibold transition focus-visible:ring-2 focus-visible:ring-brand"
                   >
-                    <span>Instagram (@nickfikri0)</span>
+                    <span>Instagram</span>
                     <ExternalLink className="w-3 h-3 text-zinc-400" />
                   </a>
                 </div>
@@ -156,11 +156,11 @@ export default function Contact() {
             data-aos-delay="200"
             className="lg:col-span-7"
           >
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-card">
+            <div className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-7 lg:p-8 shadow-card">
               <h3 className="font-bold text-lg text-zinc-950 mb-1">
                 Kirim Pesan Langsung
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-600 mb-6">
+              <p className="text-xs sm:text-sm text-zinc-600 mb-5 sm:mb-6">
                 Formulir ini akan meneruskan draft ke email resmi saya.
               </p>
 
@@ -178,7 +178,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Nama Anda"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                      className="min-h-[44px] w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                     />
                   </div>
 
@@ -194,7 +194,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="email@domain.com"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                      className="min-h-[44px] w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                     />
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Contoh: Diskusi Proyek Web / Peluang Kolaborasi"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+                    className="min-h-[44px] w-full px-3.5 py-2.5 rounded-xl border border-zinc-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
                   />
                 </div>
 
@@ -243,7 +243,7 @@ export default function Contact() {
                   </div>
                 )}
 
-                <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                   <button
                     type="submit"
                     className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-medium text-sm transition shadow-sm focus-visible:ring-2 focus-visible:ring-zinc-900"
@@ -270,3 +270,4 @@ export default function Contact() {
     </section>
   )
 }
+
