@@ -58,7 +58,7 @@ export default function Contact() {
         <div className="mt-8 sm:mt-12 grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Contact Details Cards */}
           <div
-            data-aos="fade-right"
+            data-aos="fade-up"
             data-aos-delay="100"
             className="lg:col-span-5 space-y-4"
           >
@@ -152,7 +152,7 @@ export default function Contact() {
 
           {/* Contact Message Form */}
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-delay="200"
             className="lg:col-span-7"
           >

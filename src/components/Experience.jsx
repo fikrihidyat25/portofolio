@@ -112,33 +112,35 @@ export default function Experience() {
         </div>
 
         {/* Filter Categories with min 44px tap targets */}
-        <div className="mt-6 sm:mt-8 flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none touch-pan-x">
-          {categories.map((cat) => {
-            const count = getCategoryCount(cat)
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCategory(cat)}
-                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-brand ${
-                  activeCategory === cat
-                    ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
-                    : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
-                }`}
-              >
-                <span>{cat}</span>
-                <span
-                  className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
+        <div className="w-full max-w-full overflow-hidden mt-6 sm:mt-8">
+          <div className="w-full max-w-full flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none touch-pan-x">
+            {categories.map((cat) => {
+              const count = getCategoryCount(cat)
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActiveCategory(cat)}
+                  className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-brand ${
                     activeCategory === cat
-                      ? 'bg-zinc-700 text-zinc-100'
-                      : 'bg-zinc-100 text-zinc-600'
+                      ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
+                      : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
                   }`}
                 >
-                  {count}
-                </span>
-              </button>
-            )
-          })}
+                  <span>{cat}</span>
+                  <span
+                    className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
+                      activeCategory === cat
+                        ? 'bg-zinc-700 text-zinc-100'
+                        : 'bg-zinc-100 text-zinc-600'
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
         </div>
 
         {/* Experience Cards */}

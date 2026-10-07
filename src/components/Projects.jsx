@@ -168,30 +168,32 @@ export default function Projects() {
         </div>
 
         {/* Filter Pills with min 44px tap targets */}
-        <div className="mt-6 sm:mt-8 flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none touch-pan-x">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border focus-visible:ring-2 focus-visible:ring-brand ${
-                activeCategory === cat
-                  ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
-                  : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="w-full max-w-full overflow-hidden mt-6 sm:mt-8">
+          <div className="w-full max-w-full flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none touch-pan-x">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border focus-visible:ring-2 focus-visible:ring-brand ${
+                  activeCategory === cat
+                    ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
+                    : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Projects Grid: 1 col on mobile, 2 col on tablet, 3 col on desktop */}
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 w-full">
           {filteredProjects.map((project, idx) => (
             <article
               key={project.id}
               data-aos="fade-up"
               data-aos-delay={idx * 60}
-              className="rounded-2xl border border-zinc-200 bg-zinc-50/40 hover:bg-white p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all flex flex-col justify-between"
+              className="rounded-2xl border border-zinc-200 bg-zinc-50/40 hover:bg-white p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all flex flex-col justify-between min-w-0 w-full"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">

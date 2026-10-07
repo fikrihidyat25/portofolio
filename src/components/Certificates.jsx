@@ -273,23 +273,25 @@ export default function Certificates() {
           </p>
         </div>
 
-        <div className="mt-6 sm:mt-8 flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none touch-pan-x">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border focus-visible:ring-2 focus-visible:ring-brand ${
-                activeCategory === cat
-                  ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
-                  : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="w-full max-w-full overflow-hidden mt-6 sm:mt-8">
+          <div className="w-full max-w-full flex items-center gap-2 overflow-x-auto pb-2.5 scrollbar-none touch-pan-x">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border focus-visible:ring-2 focus-visible:ring-brand ${
+                  activeCategory === cat
+                    ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
+                    : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 w-full">
           {filteredCerts.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -298,15 +300,15 @@ export default function Certificates() {
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
               onClick={() => setSelectedCert(cert)}
-              className="group cursor-pointer rounded-2xl border border-zinc-200 bg-white shadow-sm hover:shadow-md hover:border-zinc-300 transition-all flex flex-col justify-between overflow-hidden"
+              className="group cursor-pointer rounded-2xl border border-zinc-200 bg-white shadow-sm hover:shadow-md hover:border-zinc-300 transition-all flex flex-col justify-between overflow-hidden min-w-0 w-full"
             >
-              <div className="px-3.5 pt-3.5 pb-2.5 flex items-center justify-between gap-2 border-b border-zinc-100">
-                <div className="flex items-center gap-2 min-w-0">
+              <div className="px-3.5 pt-3.5 pb-2.5 flex items-center justify-between gap-2 border-b border-zinc-100 min-w-0 w-full">
+                <div className="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
                   <div className="shrink-0 px-1.5 py-0.5 rounded bg-red-600 text-white font-bold text-[10px] leading-tight tracking-tight">
                     PDF
                   </div>
                   <span
-                    className="text-xs sm:text-sm font-semibold text-zinc-800 truncate group-hover:text-zinc-950"
+                    className="text-xs sm:text-sm font-semibold text-zinc-800 truncate group-hover:text-zinc-950 block min-w-0"
                     title={cert.fileName}
                   >
                     {cert.fileName}

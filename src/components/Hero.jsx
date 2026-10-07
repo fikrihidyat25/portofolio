@@ -112,7 +112,7 @@ export default function Hero() {
 
           {/* Desktop Photo Column: Fills the full height of the desktop browser window */}
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             data-aos-duration="700"
             className="hidden lg:flex lg:col-span-5 justify-center items-center h-full"
           >

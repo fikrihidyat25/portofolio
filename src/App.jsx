@@ -22,9 +22,9 @@ export default function App() {
     })
   }, [])
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 selection:bg-brand/20 selection:text-zinc-900">
+    <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 selection:bg-brand/20 selection:text-zinc-900 w-full max-w-full overflow-x-hidden relative">
       <Navbar />
-      <main id="main-content">
+      <main id="main-content" className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <About />
         <Experience />
