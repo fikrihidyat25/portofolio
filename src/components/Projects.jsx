@@ -1,80 +1,122 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { FolderGit2, ExternalLink, Code2, Layers, CheckCircle, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FolderGit2, ExternalLink, Code2, Layers, CheckCircle, X, Filter } from 'lucide-react'
 
 const projectsData = [
   {
-    id: 'simpro-kon',
-    title: 'SIMPRO-KON (Construction Project Management System)',
-    subtitle: 'Sistem Manajemen Proyek Kontraktor Berbasis Web',
-    year: '2026',
+    id: 'kontraktor',
+    title: 'SIMPRO-KON (Sistem Manajemen Kontraktor)',
+    subtitle: 'Manajemen Proyek Lapangan & Laporan Kontraktor',
     category: 'Full-Stack Web',
-    overview:
-      'Aplikasi web manajemen proyek konstruksi yang dirancang untuk memantau progres lapangan, aktivitas kontraktor, dan alur pelaporan tim secara terstruktur.',
-    role: 'Web Programmer & Backend Logic Developer (Proyek Tim)',
-    achievements: [
-      'Merancang arsitektur backend dan relasi database dengan Laravel & MySQL.',
-      'Membangun antarmuka responsif yang memudahkan kontraktor memperbarui status pekerjaan di lokasi proyek.',
-      'Menerapkan validasi data untuk meminimalkan anomali pelaporan aktivitas proyek.',
-    ],
-    stack: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS', 'Responsive UI'],
-    repoLink: 'https://github.com/fikrihidyat25',
-  },
-  {
-    id: 'kominfo-app',
-    title: 'Aplikasi Mobile & Integrasi Layanan Kominfo',
-    subtitle: 'Integrasi Antarmuka Mobile dengan Backend API',
     year: '2025',
-    category: 'Mobile & API Integration',
     overview:
-      'Pengembangan fitur aplikasi mobile untuk kebutuhan dinas komunikasi dan informatika kota Bukittinggi yang terhubung langsung dengan backend API.',
-    role: 'Software Engineering Intern',
+      'Aplikasi web manajemen proyek yang dirancang untuk membantu pencatatan progres pekerjaan, aktivitas tim kontraktor, dan rekapitulasi data di lapangan. Dibangun secara kolaboratif bersama tim menggunakan framework Laravel.',
+    role: 'Kolaborasi Tim (Web & Backend Logic)',
     achievements: [
-      'Membangun antarmuka mobile berbasis Flutter dan bahasa pemrograman Dart.',
-      'Mengintegrasikan endpoint RESTful API berbasis Laravel untuk pertukaran data secara aman.',
-      'Menerapkan prinsip reusable UI components untuk mempercepat iterasi fitur.',
+      'Pembangunan modul pengelolaan data proyek dan pelaporan progres lapangan.',
+      'Perancangan struktur tabel database relasional menggunakan MySQL.',
+      'Penerapan validasi input form untuk meminimalkan anomali pencatatan berkas proyek.',
     ],
-    stack: ['Flutter', 'Dart', 'Laravel API', 'REST Client', 'Postman'],
-    repoLink: 'https://github.com/fikrihidyat25',
+    stack: ['Laravel', 'PHP', 'Blade', 'MySQL', 'Tailwind CSS'],
+    repoLink: 'https://github.com/fikrihidyat25/kontraktor',
   },
   {
-    id: 'mikrotik-infra',
-    title: 'Infrastruktur Jaringan LAN & Mikrotik Routing',
-    subtitle: 'Arsitektur Jaringan Lokal dan Manajemen Bandwidth',
-    year: '2020 - 2022',
-    category: 'System & Networking',
-    overview:
-      'Implementasi dan optimasi jaringan lokal perkantoran untuk menjamin stabilitas throughput data serta keamanan distribusi koneksi klien.',
-    role: 'IT & Network Technician',
-    achievements: [
-      'Konfigurasi parameter routing Mikrotik, firewall rules, dan pembagian bandwidth per user/workstation.',
-      'Pemasangan kabel terstruktur (LAN cabling) dan pengujian koneksi jaringan lokal.',
-      'Pemecahan masalah hardware PC dan perangkat switch secara berkala.',
-    ],
-    stack: ['Mikrotik RouterOS', 'LAN Infrastructure', 'Bandwidth Management', 'Hardware Diagnostics'],
-    repoLink: 'https://github.com/fikrihidyat25',
-  },
-  {
-    id: 'bolean-media',
-    title: 'Visual Documentation & Publication Hub',
-    subtitle: 'Manajemen Aset Media Visual Departemen Informatika',
+    id: 'findly',
+    title: 'Findly (Lost & Found Web Platform)',
+    subtitle: 'Platform Pencarian & Pelaporan Barang Hilang',
+    category: 'Full-Stack Web',
     year: '2024',
-    category: 'Digital Media & UI/UX',
     overview:
-      'Alur manajemen aset visual dan publikasi media untuk rangkaian kegiatan Campus Bolean dan penyambutan mahasiswa baru Teknik Informatika ITP.',
-    role: 'Koordinator PDD (Publikasi, Dekorasi, Dokumentasi)',
+      'Platform berbasis web yang memfasilitasi pengguna untuk memposting laporan kehilangan maupun penemuan barang di area sekitar. Proyek ini dikerjakan saat mengikuti program pelatihan web programmer dengan fokus pada arsitektur Next.js dan Supabase.',
+    role: 'Full-Stack Developer (Program Pelatihan)',
     achievements: [
-      'Merancang visual framing dan materi publikasi informasi departemen.',
-      'Mengelola penyimpanan dan distribusi aset media foto serta video kegiatan.',
-      'Koordinasi lintas divisi untuk menjaga keselarasan identitas visual acara.',
+      'Pembuatan fitur publikasi dan penelusuran barang berdasarkan kategori serta lokasi.',
+      'Integrasi backend Supabase untuk autentikasi pengguna dan penyimpanan data terpusat.',
+      'Penyusunan antarmuka yang responsif untuk kenyamanan akses melalui perangkat mobile dan desktop.',
     ],
-    stack: ['Visual Framing', 'Media Production', 'Team Collaboration', 'Asset Management'],
-    repoLink: 'https://github.com/fikrihidyat25',
+    stack: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    repoLink: 'https://github.com/fikrihidyat25/findly',
+  },
+  {
+    id: 'toko-bangunan',
+    title: 'Katalog & Web Toko Bangunan',
+    subtitle: 'Katalog Produk Material Bangunan Berbasis Web',
+    category: 'Full-Stack Web',
+    year: '2024',
+    overview:
+      'Website yang dikembangkan atas permintaan pemilik usaha toko bangunan untuk menampilkan katalog material, informasi spesifikasi produk, dan mempermudah pelanggan memeriksa ketersediaan barang secara online.',
+    role: 'Solo Developer (Freelance / Permintaan Klien)',
+    achievements: [
+      'Penyusunan modul katalog produk material bangunan beserta kategorisasi barang.',
+      'Penghubungan antarmuka Next.js ke database Supabase untuk pembaruan data produk.',
+      'Desain tampilan yang rapi dan mudah dinavigasi oleh pelanggan umum.',
+    ],
+    stack: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+    repoLink: 'https://github.com/fikrihidyat25/nextjstokobangunan',
+  },
+  {
+    id: 'sim-pkl',
+    title: 'SIM-PKL (Sistem Informasi Magang / PKL)',
+    subtitle: 'Sistem Administrasi Magang & Log Harian Mahasiswa',
+    category: 'Full-Stack Web',
+    year: '2024',
+    overview:
+      'Aplikasi web pengelolaan praktik kerja lapangan yang dikembangkan untuk mendukung kebutuhan sistem skripsi klien. Mencakup alur registrasi peserta, pencatatan logbook harian, dan evaluasi kegiatan magang.',
+    role: 'Backend & Full-Stack Developer (Proyek Klien Skripsi)',
+    achievements: [
+      'Pembangunan alur pendaftaran, pencatatan jurnal harian, dan verifikasi berkas magang.',
+      'Penerapan autentikasi dan pemisahan hak akses antara admin, pembimbing, dan mahasiswa.',
+      'Struktur kode modular berbasis framework Laravel dengan database MySQL.',
+    ],
+    stack: ['Laravel', 'PHP', 'Blade', 'MySQL', 'Bootstrap'],
+    repoLink: 'https://github.com/fikrihidyat25/sim-pkl',
+  },
+  {
+    id: 'flutter-laravel',
+    title: 'Aplikasi Mobile & RESTful API Kominfo',
+    subtitle: 'Aplikasi Mobile Flutter Terhubung Backend Laravel',
+    category: 'Mobile & API',
+    year: '2025',
+    overview:
+      'Proyek yang dikerjakan selama masa magang di Dinas Komunikasi dan Informatika (Kominfo). Mengembangkan antarmuka aplikasi mobile menggunakan Flutter yang terhubung dengan backend RESTful API berbasis Laravel.',
+    role: 'Software Engineering Intern (Dinas Kominfo)',
+    achievements: [
+      'Pembangunan komponen antarmuka aplikasi mobile Flutter yang responsif dan konsisten.',
+      'Integrasi endpoint RESTful API Laravel untuk pertukaran data secara terstruktur.',
+      'Pengujian pengiriman parameter request dan parsing respons JSON menggunakan Postman.',
+    ],
+    stack: ['Flutter', 'Dart', 'Laravel API', 'RESTful API', 'Postman', 'MySQL'],
+    repoLink: 'https://github.com/fikrihidyat25/flutter-laravel',
+  },
+  {
+    id: 'trenblur',
+    title: 'Tren Blur Foto (Image Processing Script)',
+    subtitle: 'Tool Python untuk Efek Blur Foto Otomatis',
+    category: 'Python & Script',
+    year: '2024',
+    overview:
+      'Program Python sederhana untuk menerapkan efek blur otomatis pada foto dan gambar, terinspirasi dari tren efek visual di media sosial. Menggunakan teknik manipulasi citra digital dasar untuk menghasilkan gambar dengan gaya tertentu.',
+    role: 'Creator & Developer',
+    achievements: [
+      'Automasi pemrosesan file gambar lokal dengan pustaka manipulasi citra Python.',
+      'Pengaturan parameter tingkat keburaman (blur intensity) secara fleksibel.',
+      'Eksplorasi script automasi ringan untuk kebutuhan pengolahan konten visual.',
+    ],
+    stack: ['Python', 'OpenCV / PIL', 'Image Processing', 'Automation Script'],
+    repoLink: 'https://github.com/fikrihidyat25/trenblur',
   },
 ]
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null)
+  const [activeCategory, setActiveCategory] = useState('Semua')
+
+  const categories = ['Semua', 'Full-Stack Web', 'Mobile & API', 'Python & Script']
+
+  const filteredProjects =
+    activeCategory === 'Semua'
+      ? projectsData
+      : projectsData.filter((p) => p.category === activeCategory)
 
   return (
     <section
@@ -88,8 +130,8 @@ export default function Projects() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 tracking-tight">
               Portofolio Proyek
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              Kumpulan proyek berbasis web, aplikasi mobile, dan infrastruktur sistem nyata yang telah saya kerjakan dalam tim maupun penugasan industri.
+            <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed">
+              Kumpulan proyek berbasis web, aplikasi mobile, dan script automasi nyata yang pernah saya kerjakan, baik proyek tim, magang di instansi, maupun pesanan klien.
             </p>
           </div>
 
@@ -97,21 +139,39 @@ export default function Projects() {
             href="https://github.com/fikrihidyat25"
             target="_blank"
             rel="noreferrer"
-            className="min-h-[44px] inline-flex items-center gap-2 text-sm font-semibold text-zinc-800 hover:text-brand transition py-2 px-1 self-start md:self-auto focus-visible:ring-2 focus-visible:ring-brand rounded-md"
+            className="min-h-[44px] inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-800 hover:text-brand transition py-2 px-1 self-start md:self-auto focus-visible:ring-2 focus-visible:ring-brand rounded-md"
           >
             <FolderGit2 className="w-4 h-4" />
-            <span>Kunjungi GitHub Lengkap</span>
+            <span>Lihat Profil GitHub</span>
             <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
           </a>
         </div>
 
-        <div className="mt-12 grid sm:grid-cols-2 gap-6 lg:gap-8">
-          {projectsData.map((project, idx) => (
+        {/* Filter Pills */}
+        <div className="mt-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`min-h-[40px] px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border ${
+                activeCategory === cat
+                  ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
+                  : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project, idx) => (
             <article
               key={project.id}
               data-aos="fade-up"
-              data-aos-delay={idx * 80}
-              className="rounded-2xl border border-zinc-200 bg-zinc-50/40 hover:bg-white p-6 sm:p-7 shadow-card hover:border-zinc-300 transition-all flex flex-col justify-between"
+              data-aos-delay={idx * 60}
+              className="rounded-2xl border border-zinc-200 bg-zinc-50/40 hover:bg-white p-6 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -121,12 +181,12 @@ export default function Projects() {
                   <span className="text-xs font-medium text-zinc-500">{project.year}</span>
                 </div>
 
-                <h3 className="text-xl font-bold text-zinc-950 tracking-tight">
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-950 tracking-tight leading-snug">
                   {project.title}
                 </h3>
-                <p className="text-sm font-medium text-brand mt-1">{project.subtitle}</p>
+                <p className="text-xs sm:text-sm font-semibold text-brand mt-1">{project.subtitle}</p>
 
-                <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                <p className="mt-3 text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-3">
                   {project.overview}
                 </p>
 
@@ -134,7 +194,7 @@ export default function Projects() {
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="text-xs font-medium px-2 py-0.5 rounded-md bg-white border border-zinc-200 text-zinc-700"
+                      className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-white border border-zinc-200 text-zinc-700"
                     >
                       {item}
                     </span>
@@ -146,122 +206,128 @@ export default function Projects() {
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="min-h-[44px] inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-zinc-900 hover:text-brand transition py-2 px-1 focus-visible:ring-2 focus-visible:ring-brand rounded-md"
+                  className="min-h-[44px] inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 hover:text-brand transition py-2 px-1 focus-visible:ring-2 focus-visible:ring-brand rounded-md"
                 >
                   <Layers className="w-4 h-4 text-brand" />
-                  <span>Lihat Detail Arsitektur</span>
+                  <span>Rincian Fitur</span>
                 </button>
 
                 <a
                   href={project.repoLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="min-h-[44px] inline-flex items-center gap-1 text-xs text-zinc-600 hover:text-zinc-900 transition py-2 px-2"
-                  aria-label={`Buka repositori ${project.title}`}
+                  className="min-h-[44px] inline-flex items-center gap-1 text-xs font-semibold text-zinc-700 hover:text-zinc-950 transition py-2 px-2"
+                  aria-label={`Buka repositori GitHub ${project.title}`}
                 >
                   <span>Repositori</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
                 </a>
               </div>
             </article>
           ))}
         </div>
 
-        {/* Modal Detail Proyek (Accessible with Escape & backdrop click) */}
-        {selectedProject && (
-          <div
-            className="fixed inset-0 z-50 bg-zinc-950/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
-            onClick={() => setSelectedProject(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="modal-title"
-          >
+        {/* Modal Detail Proyek */}
+        <AnimatePresence>
+          {selectedProject && (
             <div
-              className="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-xl max-h-[90vh] overflow-y-auto border border-zinc-200"
-              onClick={(e) => e.stopPropagation()}
+              className="fixed inset-0 z-50 bg-zinc-950/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+              onClick={() => setSelectedProject(null)}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-title"
             >
-              <div className="flex items-start justify-between gap-4 border-b border-zinc-100 pb-4">
-                <div>
-                  <span className="text-xs font-semibold px-2 py-1 rounded bg-zinc-100 text-zinc-700">
-                    {selectedProject.category}
-                  </span>
-                  <h3 id="modal-title" className="text-xl font-bold text-zinc-950 mt-2">
-                    {selectedProject.title}
-                  </h3>
-                  <p className="text-xs text-zinc-500 mt-0.5">Peran: {selectedProject.role}</p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(null)}
-                  className="w-10 h-10 rounded-xl border border-zinc-200 flex items-center justify-center text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition focus-visible:ring-2 focus-visible:ring-brand"
-                  aria-label="Tutup jendela rincian proyek"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="mt-5 space-y-4">
-                <div>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
-                    Ringkasan Proyek
-                  </h4>
-                  <p className="text-sm text-zinc-600 mt-1 leading-relaxed">
-                    {selectedProject.overview}
-                  </p>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: 10 }}
+                transition={{ duration: 0.2 }}
+                className="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-xl max-h-[90vh] overflow-y-auto border border-zinc-200"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-start justify-between gap-4 border-b border-zinc-100 pb-4">
+                  <div>
+                    <span className="text-xs font-semibold px-2 py-1 rounded bg-zinc-100 text-zinc-700">
+                      {selectedProject.category}
+                    </span>
+                    <h3 id="modal-title" className="text-xl font-bold text-zinc-950 mt-2">
+                      {selectedProject.title}
+                    </h3>
+                    <p className="text-xs text-zinc-500 mt-0.5">Peran: {selectedProject.role}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(null)}
+                    className="w-10 h-10 rounded-xl border border-zinc-200 flex items-center justify-center text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition focus-visible:ring-2 focus-visible:ring-brand shrink-0"
+                    aria-label="Tutup jendela rincian proyek"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
 
-                <div>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
-                    Cakupan Kerja & Hasil
-                  </h4>
-                  <div className="mt-2 space-y-2">
-                    {selectedProject.achievements.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-zinc-600">
-                        <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
+                <div className="mt-5 space-y-4">
+                  <div>
+                    <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
+                      Deskripsi Proyek
+                    </h4>
+                    <p className="text-sm text-zinc-600 mt-1 leading-relaxed">
+                      {selectedProject.overview}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
+                      Cakupan Pekerjaan & Fitur
+                    </h4>
+                    <div className="mt-2 space-y-2">
+                      {selectedProject.achievements.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-zinc-600">
+                          <CheckCircle className="w-4 h-4 text-brand shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
+                      Teknologi yang Digunakan
+                    </h4>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {selectedProject.stack.map((s) => (
+                        <span
+                          key={s}
+                          className="text-xs font-medium px-2.5 py-1 rounded-md bg-zinc-100 text-zinc-800"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
-                    Teknologi yang Diterapkan
-                  </h4>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {selectedProject.stack.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs font-medium px-2.5 py-1 rounded-md bg-zinc-100 text-zinc-800"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
+                <div className="mt-8 pt-4 border-t border-zinc-100 flex items-center justify-end gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(null)}
+                    className="min-h-[44px] px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 transition"
+                  >
+                    Tutup
+                  </button>
+                  <a
+                    href={selectedProject.repoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium transition"
+                  >
+                    <span>Buka Repositori GitHub</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </div>
-              </div>
-
-              <div className="mt-8 pt-4 border-t border-zinc-100 flex items-center justify-end gap-3">
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(null)}
-                  className="min-h-[44px] px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 transition"
-                >
-                  Tutup
-                </button>
-                <a
-                  href={selectedProject.repoLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white text-sm font-medium transition"
-                >
-                  <span>Buka GitHub</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        )}
+          )}
+        </AnimatePresence>
       </div>
     </section>
   )

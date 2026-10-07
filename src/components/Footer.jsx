@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowUp, Github, Linkedin, Mail, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -36,6 +36,16 @@ export default function Footer() {
           >
             <Linkedin className="w-4 h-4" />
             <span>LinkedIn</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/nickfikri0"
+            target="_blank"
+            rel="noreferrer"
+            className="min-h-[44px] flex items-center gap-1.5 hover:text-zinc-950 transition p-1"
+          >
+            <Instagram className="w-4 h-4" />
+            <span>Instagram</span>
           </a>
 
           <a
