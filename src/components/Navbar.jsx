@@ -31,13 +31,14 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-colors duration-200 border-b ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md border-zinc-200/80 shadow-sm'
-          : 'bg-white/80 backdrop-blur-sm border-zinc-100'
-      }`}
-    >
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-200 border-b ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-md border-zinc-200/80 shadow-sm'
+            : 'bg-white/90 backdrop-blur-sm border-zinc-100'
+        }`}
+      >
       <div className="container-max h-16 sm:h-20 flex items-center justify-between">
         <a
           href="#"
@@ -119,5 +120,8 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
-  )
+    {/* Spacer to prevent content jump underneath fixed navbar */}
+    <div className="h-16 sm:h-20 w-full shrink-0" aria-hidden="true" />
+  </>
+)
 }
