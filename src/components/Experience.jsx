@@ -51,7 +51,7 @@ const experiences = [
   {
     role: 'IT & Network Technician Intern (PRAKERIN)',
     organization: 'PT Media Tekno Nusantara',
-    period: 'Januari 2021 - April 2021',
+    period: 'Januari 2020 - Mei 2020',
     category: 'Pengalaman Kerja',
     typeBadge: 'Praktik Kerja Industri',
     description:

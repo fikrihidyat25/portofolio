@@ -21,7 +21,7 @@ const skillGroups = [
     items: [
       { name: 'Mikrotik RouterOS', note: 'Routing & Bandwidth Management' },
       { name: 'Infrastruktur LAN', note: 'Instalasi & Troubleshooting Jaringan' },
-      { name: 'Database MySQL', note: 'Perancangan Relasi & Query Data' },
+      { name: 'MySQL & PostgreSQL', note: 'Perancangan Relasi & Query Data' },
       { name: 'Google Cloud Run & Vercel', note: 'Deployment & Hosting Modern' },
     ],
   },
