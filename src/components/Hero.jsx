@@ -30,11 +30,11 @@ export default function Hero() {
               data-aos-delay="100"
               className="block lg:hidden my-6"
             >
-              <div className="w-full max-w-md mx-auto aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-soft border border-zinc-200 bg-zinc-100 relative">
+              <div className="w-full max-w-xs sm:max-w-sm mx-auto aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden shadow-soft border border-zinc-200 bg-white relative">
                 <img
                   src="/profile.jpeg"
                   alt="Foto profil Fikri Hidayat"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                   loading="eager"
                 />
                 <div className="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-1.5 rounded-lg bg-zinc-950/75 backdrop-blur-sm text-white text-xs font-medium flex items-center justify-between">
@@ -117,11 +117,11 @@ export default function Hero() {
             className="hidden lg:flex lg:col-span-5 justify-center items-center h-full"
           >
             <div className="w-full h-full min-h-[520px] xl:min-h-[600px] max-h-[680px] rounded-3xl border border-zinc-200/90 bg-white p-3 shadow-soft flex flex-col justify-between">
-              <div className="w-full flex-1 rounded-2xl overflow-hidden bg-zinc-100 relative min-h-[440px]">
+              <div className="w-full flex-1 rounded-2xl overflow-hidden bg-white relative min-h-[440px]">
                 <img
                   src="/profile.jpeg"
                   alt="Foto resmi Fikri Hidayat"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                   loading="eager"
                 />
               </div>
