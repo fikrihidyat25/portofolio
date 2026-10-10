@@ -18,7 +18,7 @@ export default function ResumeCTA() {
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
             <div className="max-w-2xl">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-tight">
-                Unduh Ringkasan Riwayat Hidup
+                Lihat Ringkasan Riwayat Hidup
               </h2>
               <p className="mt-2.5 sm:mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed">
                 Informasi terpadu seputar riwayat pendidikan di Institut Teknologi Padang & SMK 6 Padang, pengalaman magang di Kominfo Bukittinggi, portofolio sistem proyek SIMPRO-KON, serta daftar keahlian teknis.
@@ -28,11 +28,12 @@ export default function ResumeCTA() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
               <a
                 href="/fikrihidayat.pdf"
-                download="fikrihidayat.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-medium text-sm transition shadow-sm focus-visible:ring-2 focus-visible:ring-zinc-900"
               >
-                <Download className="w-4 h-4" />
-                <span>Unduh File CV</span>
+                <ExternalLink className="w-4 h-4" />
+                <span>Lihat File CV</span>
               </a>
 
               <a

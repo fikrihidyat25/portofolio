@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Github, Linkedin, ArrowRight, Download } from 'lucide-react'
+import { MapPin, Phone, Github, Linkedin, ArrowRight, FileText } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -66,7 +66,7 @@ export default function Hero() {
                 whileHover={{ y: -2 }}
                 className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border border-zinc-300 bg-white text-zinc-800 font-medium text-sm sm:text-base hover:bg-zinc-50 transition shadow-sm focus-visible:ring-2 focus-visible:ring-brand"
               >
-                <Download className="w-4 h-4 text-zinc-500" />
+                <FileText className="w-4 h-4 text-zinc-500" />
                 <span>Ringkasan CV</span>
               </motion.a>
 
