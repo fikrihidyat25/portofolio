@@ -27,8 +27,8 @@ export default function ResumeCTA() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto shrink-0">
               <a
-                href="/Bro_CV.pdf"
-                download="CV_Fikri_Hidayat.pdf"
+                href="/fikrihidayat.pdf"
+                download="fikrihidayat.pdf"
                 className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-medium text-sm transition shadow-sm focus-visible:ring-2 focus-visible:ring-zinc-900"
               >
                 <Download className="w-4 h-4" />
