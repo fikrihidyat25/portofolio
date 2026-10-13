@@ -10,6 +10,7 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     -webkit-text-size-adjust: 100%;
+    background-color: #ffffff;
   }
   body {
     overflow-x: clip;
@@ -17,6 +18,7 @@
     width: 100%;
     position: relative;
     -webkit-text-size-adjust: 100%;
+    background-color: #ffffff;
   }
   #root {
     max-width: 100%;

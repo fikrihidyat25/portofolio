@@ -6,7 +6,7 @@ export default function ResumeCTA() {
   return (
     <section
       id="resume"
-      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-zinc-50/50"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-white"
       data-aos="fade-up"
     >
       <div className="container-max">

@@ -126,7 +126,7 @@ export default function Hero() {
                 />
               </div>
 
-              <div className="mt-3.5 p-4 rounded-xl bg-zinc-50 border border-zinc-200/80 shrink-0 text-left">
+              <div className="mt-3.5 p-4 rounded-xl bg-white border border-zinc-200 shrink-0 text-left">
                 <p className="text-sm font-bold text-zinc-950">
                   Siap Bekerja & Berkomitmen Belajar Lebih Jauh
                 </p>

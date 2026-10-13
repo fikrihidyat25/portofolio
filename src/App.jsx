@@ -22,7 +22,7 @@ export default function App() {
     })
   }, [])
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans text-zinc-900 selection:bg-brand/20 selection:text-zinc-900 w-full max-w-full relative">
+    <div className="min-h-screen bg-white font-sans text-zinc-900 selection:bg-brand/20 selection:text-zinc-900 w-full max-w-full relative">
       <Navbar />
       <main id="main-content" className="w-full max-w-full overflow-x-clip">
         <Hero />

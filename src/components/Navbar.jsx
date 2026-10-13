@@ -36,7 +36,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-200 border-b ${
           scrolled
             ? 'bg-white/95 backdrop-blur-md border-zinc-200/80 shadow-sm'
-            : 'bg-white/90 backdrop-blur-sm border-zinc-100'
+            : 'bg-white/95 backdrop-blur-sm border-zinc-200/60'
         }`}
       >
       <div className="container-max h-16 sm:h-20 flex items-center justify-between">
