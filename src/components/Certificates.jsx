@@ -5,6 +5,20 @@ import { MoreVertical, X, Eye, ExternalLink, Download } from 'lucide-react'
 
 const certificatesData = [
   {
+    id: 'dicoding-python',
+    fileName: 'sertifikat_course_86_2223923_241026132911.pdf',
+    previewImage: '/sertifikat-previews/sertifikat_course_86_2223923_241026132911.webp',
+    title: 'Memulai Pemrograman dengan Python',
+    issuer: 'Dicoding Indonesia',
+    credentialId: 'QLZ9NVQE9Z5D',
+    dateText: 'Anda membukanya • 24 Okt',
+    year: '2026',
+    category: 'AI & Data',
+    description:
+      'Pemrograman Python standar industri: pengolahan data, alur kendali logika, struktur data, Object-Oriented Programming (OOP), unit testing, dan pemanfaatan library populer.',
+    verifyUrl: 'https://www.dicoding.com/certificates/QLZ9NVQE9Z5D',
+  },
+  {
     id: 'mediatama-web-design',
     fileName: 'MEDIATAMA.pdf',
     previewImage: '/sertifikat-previews/MEDIATAMA.webp',
