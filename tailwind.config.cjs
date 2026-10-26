@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -7,10 +8,10 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: "#0F766E",
-          dark: "#115E59",
-          light: "#14B8A6",
-          accent: "#0D9488"
+          DEFAULT: "#2563EB",
+          dark: "#1D4ED8",
+          light: "#60A5FA",
+          accent: "#3B82F6",
         }
       },
       boxShadow: {
@@ -25,4 +26,3 @@ module.exports = {
   },
   plugins: [],
 };
-

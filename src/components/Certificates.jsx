@@ -274,15 +274,15 @@ export default function Certificates() {
   return (
     <section
       id="certificates"
-      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-white"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 transition-colors"
       data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 dark:text-zinc-50 tracking-tight">
             Sertifikasi & Kredensial
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Arsip sertifikat pelatihan resmi, kompetensi software engineering, dan kegiatan akademik. Klik berkas untuk melihat pratinjau dokumen asli atau mengunduh PDF.
           </p>
         </div>
@@ -295,8 +295,8 @@ export default function Certificates() {
                 onClick={() => setActiveCategory(cat)}
                 className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border focus-visible:ring-2 focus-visible:ring-brand ${
                   activeCategory === cat
-                    ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
-                    : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
+                    ? 'bg-zinc-900 dark:bg-brand border-zinc-900 dark:border-brand text-white shadow-sm'
+                    : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800'
                 }`}
               >
                 {cat}
@@ -314,15 +314,15 @@ export default function Certificates() {
               whileHover={{ y: -3 }}
               transition={{ duration: 0.2 }}
               onClick={() => setSelectedCert(cert)}
-              className="group cursor-pointer rounded-2xl border border-zinc-200 bg-white shadow-sm hover:shadow-md hover:border-zinc-300 transition-all flex flex-col justify-between overflow-hidden min-w-0 w-full"
+              className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between overflow-hidden min-w-0 w-full"
             >
-              <div className="px-3.5 pt-3.5 pb-2.5 flex items-center justify-between gap-2 border-b border-zinc-100 min-w-0 w-full">
+              <div className="px-3.5 pt-3.5 pb-2.5 flex items-center justify-between gap-2 border-b border-zinc-100 dark:border-zinc-800 min-w-0 w-full">
                 <div className="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
                   <div className="shrink-0 px-1.5 py-0.5 rounded bg-red-600 text-white font-bold text-[10px] leading-tight tracking-tight">
                     PDF
                   </div>
                   <span
-                    className="text-xs sm:text-sm font-semibold text-zinc-800 truncate group-hover:text-zinc-950 block min-w-0"
+                    className="text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200 truncate group-hover:text-zinc-950 dark:group-hover:text-white block min-w-0"
                     title={cert.fileName}
                   >
                     {cert.fileName}
@@ -335,15 +335,15 @@ export default function Certificates() {
                     e.stopPropagation()
                     setSelectedCert(cert)
                   }}
-                  className="w-8 h-8 flex items-center justify-center rounded-md text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 transition shrink-0"
+                  className="w-8 h-8 flex items-center justify-center rounded-md text-zinc-400 dark:text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition shrink-0"
                 >
                   <MoreVertical className="w-4 h-4" />
                 </button>
               </div>
 
               {/* Real Certificate Preview Snapshot */}
-              <div className="relative p-3 bg-zinc-100/70 group-hover:bg-zinc-100 transition-colors flex items-center justify-center min-h-[175px]">
-                <div className="w-full max-w-[240px] aspect-[1.414/1] bg-white rounded-md shadow-sm border border-zinc-200/80 overflow-hidden relative group-hover:scale-[1.02] transition-transform duration-200 flex items-center justify-center">
+              <div className="relative p-3 bg-zinc-100/70 dark:bg-zinc-950/70 group-hover:bg-zinc-100 dark:group-hover:bg-zinc-950 transition-colors flex items-center justify-center min-h-[175px]">
+                <div className="w-full max-w-[240px] aspect-[1.414/1] bg-white dark:bg-zinc-900 rounded-md shadow-sm border border-zinc-200/80 dark:border-zinc-800 overflow-hidden relative group-hover:scale-[1.02] transition-transform duration-200 flex items-center justify-center">
                   <img
                     src={cert.previewImage}
                     alt={`Pratinjau sertifikat ${cert.title}`}
@@ -360,21 +360,21 @@ export default function Certificates() {
                 </div>
               </div>
 
-              <div className="px-3.5 py-2.5 flex items-center justify-between gap-2 text-xs text-zinc-500 bg-white">
+              <div className="px-3.5 py-2.5 flex items-center justify-between gap-2 text-xs text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-900 border-t border-zinc-100 dark:border-zinc-800/60">
                 <div className="flex items-center gap-2 min-w-0">
                   <img
                     src="/profile.jpeg"
                     alt="Fikri Hidayat"
-                    className="w-5 h-5 rounded-full object-cover border border-zinc-200 shrink-0"
+                    className="w-5 h-5 rounded-full object-cover border border-zinc-200 dark:border-zinc-700 shrink-0"
                     onError={(e) => {
                       e.target.style.display = 'none'
                     }}
                   />
-                  <span className="truncate text-[11px] text-zinc-600 font-medium">
+                  <span className="truncate text-[11px] text-zinc-600 dark:text-zinc-400 font-medium">
                     {cert.dateText}
                   </span>
                 </div>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 shrink-0">
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 shrink-0">
                   {cert.year}
                 </span>
               </div>
@@ -398,9 +398,9 @@ export default function Certificates() {
                   exit={{ opacity: 0, scale: 0.95, y: 15 }}
                   transition={{ duration: 0.2 }}
                   onClick={(e) => e.stopPropagation()}
-                  className="relative w-full max-w-2xl max-h-[92dvh] bg-white rounded-2xl shadow-2xl border border-zinc-200 overflow-hidden flex flex-col"
+                  className="relative w-full max-w-2xl max-h-[92dvh] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col"
                 >
-                  <div className="px-4 sm:px-6 py-3 bg-zinc-900 text-white flex items-center justify-between gap-3 shrink-0">
+                  <div className="px-4 sm:px-6 py-3 bg-zinc-900 dark:bg-zinc-950 text-white flex items-center justify-between gap-3 shrink-0">
                     <div className="flex items-center gap-2.5 min-w-0">
                       <div className="px-1.5 py-0.5 rounded bg-red-600 text-white font-bold text-xs tracking-tight shrink-0">
                         PDF
@@ -436,8 +436,8 @@ export default function Certificates() {
                   </div>
 
                   {/* Real Certificate Image View in Modal */}
-                  <div className="p-3 sm:p-5 overflow-y-auto bg-zinc-100 flex flex-col items-center gap-3">
-                    <div className="w-full bg-white rounded-xl shadow-sm border border-zinc-200 p-2 sm:p-3 flex items-center justify-center">
+                  <div className="p-3 sm:p-5 overflow-y-auto bg-zinc-100 dark:bg-zinc-950/90 flex flex-col items-center gap-3">
+                    <div className="w-full bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 flex items-center justify-center">
                       <img
                         src={selectedCert.previewImage}
                         alt={selectedCert.title}
@@ -446,13 +446,13 @@ export default function Certificates() {
                     </div>
 
                     {/* Details Footer Bar inside Modal */}
-                    <div className="w-full bg-white rounded-xl border border-zinc-200 p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shrink-0">
+                    <div className="w-full bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shrink-0">
                       <div>
-                        <h4 className="font-bold text-sm sm:text-base text-zinc-900 leading-snug">{selectedCert.title}</h4>
-                        <p className="text-xs text-zinc-500 mt-0.5">
+                        <h4 className="font-bold text-sm sm:text-base text-zinc-900 dark:text-zinc-100 leading-snug">{selectedCert.title}</h4>
+                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
                           {selectedCert.issuer} • Tahun {selectedCert.year} • ID: {selectedCert.credentialId}
                         </p>
-                        <p className="text-xs text-zinc-600 mt-1 max-w-xl">{selectedCert.description}</p>
+                        <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1 max-w-xl">{selectedCert.description}</p>
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0 w-full sm:w-auto">
@@ -461,7 +461,7 @@ export default function Certificates() {
                             href={selectedCert.verifyUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold transition"
+                            className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 text-xs font-semibold transition"
                           >
                             <ExternalLink className="w-3.5 h-3.5" />
                             <span>Verifikasi</span>
@@ -470,7 +470,7 @@ export default function Certificates() {
                         <a
                           href={encodeURI(`/sertifikat/${selectedCert.fileName}`)}
                           download={selectedCert.fileName}
-                          className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-800 transition"
+                          className="min-h-[44px] w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-brand dark:hover:bg-blue-600 text-white text-xs font-semibold transition"
                         >
                           <Download className="w-3.5 h-3.5" />
                           <span>Unduh PDF</span>
@@ -479,13 +479,13 @@ export default function Certificates() {
                     </div>
                   </div>
 
-                  <div className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white border-t border-zinc-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 text-xs text-zinc-600 shrink-0">
+                  <div className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 text-xs text-zinc-600 dark:text-zinc-400 shrink-0">
                     <span className="hidden sm:inline-block">
-                      Tekan <kbd className="px-1.5 py-0.5 rounded bg-zinc-100 border border-zinc-300 font-mono text-[10px]">ESC</kbd> untuk menutup
+                      Tekan <kbd className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 font-mono text-[10px]">ESC</kbd> untuk menutup
                     </span>
                     <button
                       onClick={() => setSelectedCert(null)}
-                      className="min-h-[44px] w-full sm:w-auto sm:ml-auto px-5 py-2 rounded-xl bg-zinc-900 text-white font-medium text-xs hover:bg-zinc-800 transition flex items-center justify-center"
+                      className="min-h-[44px] w-full sm:w-auto sm:ml-auto px-5 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-white font-medium text-xs transition flex items-center justify-center"
                     >
                       Tutup Pratinjau
                     </button>

@@ -4,13 +4,13 @@ import { Building2, Calendar, CheckCircle2, Briefcase, Award, Users } from 'luci
 
 const experiences = [
   {
-    role: 'Junior Web Programmer (Pelatihan Kejuruan TIK)',
+    role: 'Junior Web Programmer',
     organization: 'Mediatama Web (LPK Mediatama Web Indonesia)',
     period: 'Agustus 2026 - September 2026',
     category: 'Pelatihan',
     typeBadge: 'Pelatihan Kerja',
     description:
-      'Program pelatihan kerja intensif 25 hari kerja bidang Teknologi Informasi dan Komunikasi (TIK) kejuruan Web Design berstandar Kemnaker RI.',
+      'Program pelatihan kerja intensif 25 hari kerja Web Design berstandar Kemnaker RI.',
     highlights: [
       'Mengimplementasikan rancangan antarmuka pengguna (UI) web yang responsif dan interaktif.',
       'Menulis kode program terstruktur, manipulasi struktur data, dan pemanfaatan pustaka komponen web.',
@@ -20,12 +20,12 @@ const experiences = [
   },
   {
     role: 'Web Programmer (Proyek Tim)',
-    organization: 'SIMPRO-KON',
+    organization: 'DIGITAPRODA',
     period: '2026',
     category: 'Pengalaman Kerja',
     typeBadge: 'Proyek Rekayasa Perangkat Lunak',
     description:
-      'Membangun dan memelihara fitur web inti untuk sistem manajemen proyek konstruksi dalam tim kolaboratif.',
+      'Membangun dan memelihara fitur web inti untuk sistem manajemen proyek konstruksi dalam proyek kolaboratif bersama dosen dan tim pengembang.',
     highlights: [
       'Mengimplementasikan logika backend dan arsitektur database relasional menggunakan Laravel.',
       'Merancang antarmuka responsif guna menyederhanakan pelacakan progres aktivitas kontraktor.',
@@ -98,16 +98,16 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-white"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 transition-colors"
       data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 dark:text-zinc-50 tracking-tight">
             Pengalaman Kerja, Pelatihan & Organisasi
           </h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed">
-            Rekam jejak terstruktur mencakup pengalaman kerja teknis, pelatihan kejuruan resmi, serta keaktifan kepanitiaan dan organisasi kampus.
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Rekam jejak terstruktur mencakup pengalaman kerja teknis, pelatihan resmi, serta keaktifan kepanitiaan dan organisasi kampus.
           </p>
         </div>
 
@@ -123,16 +123,16 @@ export default function Experience() {
                   onClick={() => setActiveCategory(cat)}
                   className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition whitespace-nowrap border flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-brand ${
                     activeCategory === cat
-                      ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
-                      : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-100'
+                      ? 'bg-zinc-900 dark:bg-brand border-zinc-900 dark:border-brand text-white shadow-sm'
+                      : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800'
                   }`}
                 >
                   <span>{cat}</span>
                   <span
                     className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
                       activeCategory === cat
-                        ? 'bg-zinc-700 text-zinc-100'
-                        : 'bg-zinc-100 text-zinc-600'
+                        ? 'bg-zinc-700 dark:bg-blue-800 text-zinc-100'
+                        : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'
                     }`}
                   >
                     {count}
@@ -154,48 +154,48 @@ export default function Experience() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.2 }}
-                className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-7 lg:p-8 shadow-card hover:border-zinc-300 transition-colors"
+                className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 sm:p-7 lg:p-8 shadow-card hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-100 pb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-100 dark:border-zinc-800 pb-4">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-zinc-100 text-zinc-700">
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
                         {exp.typeBadge}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-zinc-950 mt-2">
+                    <h3 className="text-xl font-bold text-zinc-950 dark:text-zinc-100 mt-2">
                       {exp.role}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-sm font-medium text-brand mt-1">
-                      <Building2 className="w-4 h-4 text-brand shrink-0" />
+                    <div className="flex items-center gap-1.5 text-sm font-medium text-brand dark:text-blue-400 mt-1">
+                      <Building2 className="w-4 h-4 text-brand dark:text-blue-400 shrink-0" />
                       <span>{exp.organization}</span>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-600 bg-zinc-50 px-3 py-1.5 rounded-lg border border-zinc-200/60 self-start sm:self-auto shrink-0">
-                    <Calendar className="w-4 h-4 text-zinc-400 shrink-0" />
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-zinc-600 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-800/60 px-3 py-1.5 rounded-lg border border-zinc-200/60 dark:border-zinc-700/60 self-start sm:self-auto shrink-0">
+                    <Calendar className="w-4 h-4 text-zinc-400 dark:text-zinc-400 shrink-0" />
                     <span>{exp.period}</span>
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm sm:text-base text-zinc-700 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
                   {exp.description}
                 </p>
 
                 <div className="mt-4 space-y-2">
                   {exp.highlights.map((item, hIdx) => (
-                    <div key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-600">
-                      <CheckCircle2 className="w-4 h-4 text-brand shrink-0 mt-0.5" />
+                    <div key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
+                      <CheckCircle2 className="w-4 h-4 text-brand dark:text-blue-400 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-zinc-100 flex flex-wrap gap-2">
+                <div className="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800 flex flex-wrap gap-2">
                   {exp.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-xs font-medium px-2.5 py-1 rounded-lg bg-zinc-50 text-zinc-700 border border-zinc-200/70"
+                      className="text-xs font-medium px-2.5 py-1 rounded-lg bg-zinc-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200/70 dark:border-zinc-700"
                     >
                       {t}
                     </span>

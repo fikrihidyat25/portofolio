@@ -53,15 +53,15 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 bg-white"
+      className="py-12 sm:py-16 lg:py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 transition-colors"
       data-aos="fade-up"
     >
       <div className="container-max">
         <div className="max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-zinc-950 dark:text-zinc-50 tracking-tight">
             Kompetensi Teknis & Soft Skills
           </h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Dikelompokkan sesuai pengalaman akademik di ITP, SMK TKJ, magang Kominfo, dan proyek riil tanpa angka statistik buatan.
           </p>
         </div>
@@ -74,16 +74,16 @@ export default function Skills() {
                 key={idx}
                 data-aos="fade-up"
                 data-aos-delay={idx * 80}
-                className="rounded-2xl border border-zinc-200 bg-zinc-50/40 p-5 sm:p-7 shadow-card flex flex-col justify-between"
+                className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/40 dark:bg-zinc-900/60 p-5 sm:p-7 shadow-card flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-brand/10 dark:bg-brand/20 text-brand dark:text-blue-400 flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="font-bold text-base sm:text-lg text-zinc-950">{group.title}</h3>
+                    <h3 className="font-bold text-base sm:text-lg text-zinc-950 dark:text-zinc-100">{group.title}</h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-zinc-600 mb-5 sm:mb-6 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-5 sm:mb-6 leading-relaxed">
                     {group.desc}
                   </p>
 
@@ -91,12 +91,12 @@ export default function Skills() {
                     {group.items.map((item, itemIdx) => (
                       <div
                         key={itemIdx}
-                        className="p-3 rounded-xl border border-zinc-200/80 bg-white"
+                        className="p-3 rounded-xl border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-800/80"
                       >
-                        <p className="font-bold text-xs sm:text-sm text-zinc-900">
+                        <p className="font-bold text-xs sm:text-sm text-zinc-900 dark:text-zinc-100">
                           {item.name}
                         </p>
-                        <p className="text-xs text-zinc-500 mt-0.5">{item.note}</p>
+                        <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{item.note}</p>
                       </div>
                     ))}
                   </div>
@@ -109,4 +109,3 @@ export default function Skills() {
     </section>
   )
 }
-

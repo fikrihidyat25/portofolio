@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -21,20 +22,23 @@ export default function App() {
       offset: 60,
     })
   }, [])
+
   return (
-    <div className="min-h-screen bg-white font-sans text-zinc-900 selection:bg-brand/20 selection:text-zinc-900 w-full max-w-full relative">
-      <Navbar />
-      <main id="main-content" className="w-full max-w-full overflow-x-clip">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Certificates />
-        <Skills />
-        <ResumeCTA />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans text-zinc-900 dark:text-zinc-100 selection:bg-brand/20 dark:selection:bg-brand/30 selection:text-zinc-900 dark:selection:text-zinc-100 w-full max-w-full relative transition-colors duration-200">
+        <Navbar />
+        <main id="main-content" className="w-full max-w-full overflow-x-clip">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Certificates />
+          <Skills />
+          <ResumeCTA />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
