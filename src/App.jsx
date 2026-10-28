@@ -21,6 +21,22 @@ export default function App() {
       once: true,
       offset: 60,
     })
+
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '')
+      const el = document.getElementById(id)
+      if (el) {
+        setTimeout(() => {
+          const navOffset = window.innerWidth >= 640 ? 80 : 64
+          const elementPosition = el.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - navOffset
+          window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth',
+          })
+        }, 200)
+      }
+    }
   }, [])
 
   return (

@@ -32,6 +32,42 @@ export default function Navbar() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [])
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    setOpen(false)
+
+    if (href === '#' || href === '#home') {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 50)
+      try {
+        window.history.pushState(null, '', window.location.pathname)
+      } catch (_) {}
+      return
+    }
+
+    const targetId = href.replace('#', '')
+    const targetElement = document.getElementById(targetId)
+
+    if (targetElement) {
+      try {
+        window.history.pushState(null, '', href)
+      } catch (_) {}
+
+      // Delay briefly so mobile touch event finishes and drawer closes without cancelling the scroll
+      setTimeout(() => {
+        const navOffset = window.innerWidth >= 640 ? 80 : 64
+        const elementPosition = targetElement.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - navOffset
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth',
+        })
+      }, 80)
+    }
+  }
+
   return (
     <>
       <header
@@ -44,6 +80,7 @@ export default function Navbar() {
         <div className="container-max h-16 sm:h-20 flex items-center justify-between">
           <a
             href="#"
+            onClick={(e) => handleNavClick(e, '#')}
             className="group flex flex-col focus-visible:ring-2 focus-visible:ring-brand rounded-lg p-1"
             aria-label="Kembali ke atas"
           >
@@ -61,6 +98,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition-colors py-2 px-1 focus-visible:ring-2 focus-visible:ring-brand rounded-md"
               >
                 {link.label}
@@ -83,6 +121,7 @@ export default function Navbar() {
 
             <a
               href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-brand dark:hover:bg-blue-600 text-white text-sm font-medium transition shadow-sm focus-visible:ring-2 focus-visible:ring-zinc-900"
             >
               <span>Hubungi Saya</span>
@@ -132,7 +171,7 @@ export default function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="min-h-[44px] flex items-center px-3.5 py-2.5 text-base font-semibold text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/70 rounded-xl transition focus-visible:ring-2 focus-visible:ring-brand"
                   >
                     {link.label}
@@ -141,7 +180,7 @@ export default function Navbar() {
                 <div className="pt-3 mt-2 border-t border-zinc-100 dark:border-zinc-800">
                   <a
                     href="#contact"
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => handleNavClick(e, '#contact')}
                     className="min-h-[44px] flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-brand dark:hover:bg-blue-600 text-white font-medium text-sm transition shadow-sm"
                   >
                     Hubungi Saya
